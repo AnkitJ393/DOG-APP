@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog APP</title>
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+      }
+      .app {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        flex: 0.35;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .header h1 {
+        font-size: 4rem;
+        letter-spacing: 5px;
+        margin-bottom: 10px;
+      }
+      .header .list {
+        width: 70%;
+        margin: 0 auto;
+        height: 30%;
+        border: 5px solid royalblue;
+        border-radius: 10px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .header .list .option {
+        background-color: transparent;
+        /* background-color: rgba(131, 32, 32, 0.5); */
+        /* opacity: 0.2; */
+      }
+      .header .list :active {
+        outline: none;
+      }
+
+      .slideshow {
+        flex: 1;
+        position: relative;
+        background: #333;
+        overflow: hidden;
+      }
+      .slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        opacity: 0;
+        transform: scale(1);
+        transition: all 0.9s ease-out;
+        /* transition: all 0.8s linear; */
+      }
+      .slide:nth-last-child(2) {
+        opacity: 1;
+
+        transform: scale(1.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <h1>DOG APP</h1>
+        <select class="list">
+          <option>Choose Dog Breed</option>
+        </select>
+      </div>
+      <div class="slideshow" id="slideshow"></div>
+    </div>
+
+    <script src="json.js"></script>
+  </body>
+</html>
